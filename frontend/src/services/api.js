@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = (process.env.REACT_APP_API_URL || 'http://localhost:5000/api').replace(/\/$/, "");
+console.log("Connecting to API at:", API_BASE_URL); // Thêm log để dễ bắt bệnh trong Console
 
 const api = axios.create({
   baseURL: API_BASE_URL,
