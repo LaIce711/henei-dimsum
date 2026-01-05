@@ -1,8 +1,5 @@
-// src/pages/AdminOrdersPage.jsx
-import React, { useEffect, useState } from "react";
+import api from "../services/api";
 import "./AdminOrdersPage.css";
-
-const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 const STATUS_OPTIONS = ["pending", "confirmed", "done", "cancelled"];
 
@@ -23,11 +20,9 @@ const AdminOrdersPage = () => {
       setLoading(true);
       setError("");
 
-      const res = await fetch(`${API_BASE}/orders`);
-      if (!res.ok) throw new Error("Không lấy được danh sách đơn");
-
-      const data = await res.json();
-      setOrders(data);
+      const res = await api.get("/orders");
+      const data = res.data;
+      setOrders(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error(err);
       setError("Không tải được danh sách đơn hàng. Hãy thử lại sau.");
@@ -43,15 +38,8 @@ const AdminOrdersPage = () => {
   const handleStatusChange = async (orderId, newStatus) => {
     try {
       // 👇 khớp với route PATCH /api/orders/:id/status
-      const res = await fetch(`${API_BASE}/orders/${orderId}/status`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status: newStatus }),
-      });
-
-      if (!res.ok) throw new Error("Lỗi cập nhật trạng thái");
-
-      const updated = await res.json();
+      const res = await api.patch(`/orders/${orderId}/status`, { status: newStatus });
+      const updated = res.data;
 
       setOrders((prev) =>
         prev.map((o) => (o._id === updated._id ? updated : o))
@@ -90,8 +78,8 @@ const AdminOrdersPage = () => {
                 <td>
                   {order.createdAt
                     ? new Date(order.createdAt).toLocaleString("vi-VN", {
-                        hour12: false,
-                      })
+                      hour12: false,
+                    })
                     : "-"}
                 </td>
 
