@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { promotionsAPI } from '../services/api';
 import './PromotionsPage.css';
 

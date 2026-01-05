@@ -39,5 +39,44 @@ Bạn đã có dữ liệu trên MongoDB Atlas, điều này rất tốt.
 5. Thêm **Environment Variables**:
    - `REACT_APP_API_URL`: (URL của Backend sau khi deploy - ví dụ: `https://henei-backend.onrender.com`)
 
-## 4. Lưu ý quan trọng
+## 4. Hướng dẫn Chạy Local (Để Demo/Phát triển)
+
+Để chạy dự án ngay trên máy tính của bạn mà không phụ thuộc vào internet (hoặc để demo dự phòng), hãy làm theo các bước sau:
+
+### Cấu hình file .env
+Bạn hãy tạo hoặc sửa file `.env` ở cả hai thư mục:
+
+**Backend (`/backend/.env`):**
+```env
+PORT=5000
+MONGO_URI=mongodb+srv://... (Link database của bạn)
+JWT_SECRET=HeneiDimsum2024
+# FRONTEND_URL=http://localhost:3000
+```
+*(Nếu muốn chạy local, hãy để trống hoặc xóa `FRONTEND_URL` để nó tự nhận localhost).*
+
+**Frontend (`/frontend/.env`):**
+```env
+# REACT_APP_API_URL=http://localhost:5000/api
+```
+*(Mặc định nếu bạn không điền gì, Frontend sẽ tự gọi vào localhost:5000).*
+
+### Các bước khởi động
+1. **Mở Terminal 1 (Backend):**
+   ```powershell
+   cd backend
+   npm run dev
+   ```
+2. **Mở Terminal 2 (Frontend):**
+   ```powershell
+   cd frontend
+   npm start
+   ```
+
+### 💡 Mẹo Chuyển đổi Nhanh
+- **Demo Local dùng Data Render:** Điền `REACT_APP_API_URL=https://henei-dimsum.onrender.com/api` vào `/frontend/.env`.
+- **Demo Offline hoàn toàn:** Xóa/Đóng các dòng URL trong cả 2 file `.env` ở máy.
+
+## 5. Lưu ý quan trọng
 - Sau khi có URL của cả 2 bên, hãy quay lại phần biến môi trường (Environment Variables) để cập nhật chính xác `FRONTEND_URL` cho Backend và `REACT_APP_API_URL` cho Frontend để tránh lỗi CORS.
+- Luôn chạy lệnh **Redeploy** trên Vercel sau khi thay đổi Biến môi trường.
