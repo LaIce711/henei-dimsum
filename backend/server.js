@@ -58,8 +58,8 @@ app.use((err, req, res, next) => {
 // Khởi động server (chỉ khi không phải Vercel)
 if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
   const PORT = process.env.PORT || 5000;
-  app.listen(PORT, () => {
-    console.log(`Server đang chạy ở http://localhost:${PORT}`);
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Backend server is running on port ${PORT}`);
   });
 }
 
