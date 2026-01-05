@@ -16,8 +16,23 @@ const app = express();
 connectDB();
 
 // Middleware - CORS configuration
+const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: function (origin, callback) {
+    // Cho phép các request không có origin (như mobile apps hoặc curl)
+    if (!origin) return callback(null, true);
+
+    // Kiểm tra xem origin có khớp với FRONTEND_URL (sau khi đã loại bỏ dấu / ở cuối)
+    const normalizedFrontendUrl = frontendUrl.replace(/\/$/, "");
+    const normalizedOrigin = origin.replace(/\/$/, "");
+
+    if (normalizedOrigin === normalizedFrontendUrl || normalizedOrigin === 'http://localhost:3000') {
+      callback(null, true);
+    } else {
+      console.log("CORS blocked for origin:", origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   optionsSuccessStatus: 200
 };
