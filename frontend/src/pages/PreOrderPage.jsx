@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { dishesAPI, preordersAPI } from "../services/api";
 import "./PreOrderPage.css";
 
 const PreOrderPage = () => {
@@ -7,7 +8,7 @@ const PreOrderPage = () => {
   const [dishes, setDishes] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -23,9 +24,8 @@ const PreOrderPage = () => {
 
   const fetchDishes = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/dishes");
-      const data = await response.json();
-      setDishes(data);
+      const data = await dishesAPI.getAllDishes();
+      setDishes(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error("Error fetching dishes:", error);
     } finally {
@@ -79,38 +79,28 @@ const PreOrderPage = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/preorders", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          customer: {
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email
-          },
-          deliveryAddress: formData.address,
-          items: selectedItems.map(item => ({
-            dishId: item._id,
-            name: item.name,
-            price: item.price,
-            quantity: item.quantity
-          })),
-          totalPrice,
-          paymentMethod: formData.paymentMethod,
-          specialRequests: formData.specialRequests
-        })
+      const data = await preordersAPI.create({
+        customer: {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email
+        },
+        deliveryAddress: formData.address,
+        items: selectedItems.map(item => ({
+          dishId: item._id,
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity
+        })),
+        totalPrice,
+        paymentMethod: formData.paymentMethod,
+        specialRequests: formData.specialRequests
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        alert(`🎉 Đặt hàng thành công!\n\nMã đơn: ${data.preOrderId}\nTổng tiền: ${totalPrice.toLocaleString()}đ\n\nVui lòng đến nhận hàng đúng giờ!`);
-        navigate("/");
-      } else {
-        const error = await response.json();
-        alert("❌ Lỗi: " + error.message);
-      }
+      alert(`🎉 Đặt hàng thành công!\n\nMã đơn: ${data.preOrderId}\nTổng tiền: ${totalPrice.toLocaleString()}đ\n\nVui lòng đến nhận hàng đúng giờ!`);
+      navigate("/");
     } catch (err) {
-      alert("❌ Không thể kết nối đến server.");
+      alert("❌ Lỗi: " + (err.response?.data?.message || err.message));
       console.error(err);
     }
   };
@@ -145,7 +135,7 @@ const PreOrderPage = () => {
 
         <div className="order-summary">
           <h2>Đơn hàng của bạn</h2>
-          
+
           {selectedItems.length === 0 ? (
             <p className="empty-cart">Chưa có món nào được chọn</p>
           ) : (
@@ -174,7 +164,7 @@ const PreOrderPage = () => {
 
               <form onSubmit={handleSubmit} className="order-form">
                 <h3>Thông tin nhận hàng</h3>
-                
+
                 <input
                   type="text"
                   name="name"

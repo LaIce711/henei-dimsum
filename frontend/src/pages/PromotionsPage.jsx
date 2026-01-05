@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { promotionsAPI } from '../services/api';
 import './PromotionsPage.css';
 
 function PromotionsPage() {
@@ -11,9 +11,8 @@ function PromotionsPage() {
 
   const fetchPromotions = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/promotions');
-      const data = await response.json();
-      setPromotions(data);
+      const data = await promotionsAPI.getAll();
+      setPromotions(Array.isArray(data) ? data : []);
       setLoading(false);
     } catch (error) {
       console.error('Error fetching promotions:', error);
@@ -58,11 +57,11 @@ function PromotionsPage() {
                 <span className="discount-value">{getDiscountDisplay(promotion)}</span>
                 <span className="discount-label">GIẢM GIÁ</span>
               </div>
-              
+
               <div className="promotion-content">
                 <h3>{promotion.title}</h3>
                 <p className="promotion-description">{promotion.description}</p>
-                
+
                 <div className="promotion-dates">
                   <div className="date-item">
                     <span className="date-label">Từ:</span>

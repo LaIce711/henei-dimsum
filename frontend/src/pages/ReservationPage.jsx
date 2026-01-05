@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { reservationsAPI } from "../services/api";
 import "./ReservationPage.css";
 
 const ReservationPage = () => {
@@ -48,35 +49,23 @@ const ReservationPage = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/reservations", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
+      const data = await reservationsAPI.create({
+        customer: {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email
         },
-        body: JSON.stringify({
-          customer: {
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email
-          },
-          reservationDate: formData.reservationDate,
-          reservationTime: formData.reservationTime,
-          numberOfGuests: formData.numberOfGuests,
-          tablePreference: formData.tablePreference,
-          specialRequests: formData.specialRequests
-        })
+        reservationDate: formData.reservationDate,
+        reservationTime: formData.reservationTime,
+        numberOfGuests: formData.numberOfGuests,
+        tablePreference: formData.tablePreference,
+        specialRequests: formData.specialRequests
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        alert(`🎉 Đặt bàn thành công!\n\nMã đặt bàn: ${data.reservationId}\n\nChúng tôi sẽ gọi xác nhận trong thời gian sớm nhất.`);
-        navigate("/");
-      } else {
-        const error = await response.json();
-        alert("❌ Lỗi: " + error.message);
-      }
+      alert(`🎉 Đặt bàn thành công!\n\nMã đặt bàn: ${data.reservationId}\n\nChúng tôi sẽ gọi xác nhận trong thời gian sớm nhất.`);
+      navigate("/");
     } catch (err) {
-      alert("❌ Không thể kết nối đến server.");
+      alert("❌ Lỗi: " + (err.response?.data?.message || err.message));
       console.error(err);
     } finally {
       setLoading(false);
@@ -96,7 +85,7 @@ const ReservationPage = () => {
       <form onSubmit={handleSubmit} className="reservation-form">
         <div className="form-section">
           <h3>Thông tin khách hàng</h3>
-          
+
           <div className="form-group">
             <label>Họ tên <span className="required">*</span></label>
             <input
