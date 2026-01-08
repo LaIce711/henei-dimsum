@@ -4,7 +4,7 @@
     "price": 115000,
     "description": "Claypot Shrimp Vermicelli",
     "category": "Xào",
-    "image": "/images/xao/tom-mien.jpg",
+    "image": "/images/dishes/tommientaycam.webp",
     "id": 26
   },
   {
@@ -12,7 +12,7 @@
     "price": 129000,
     "description": "Shrimp with Mayonnaise",
     "category": "Xào",
-    "image": "/images/xao/tom-mayone.jpg",
+    "image": "/images/dishes/tomsotmayone.webp",
     "id": 27
   },
   {
@@ -20,7 +20,7 @@
     "price": 149000,
     "description": "Beef with Black Pepper Sauce",
     "category": "Xào",
-    "image": "/images/xao/bo-tieu-den.jpg",
+    "image": "/images/dishes/bosottieuden.webp",
     "id": 28
   },
   {
@@ -36,7 +36,7 @@
     "price": 65000,
     "description": "Hong Kong Choy Sum with Garlic",
     "category": "Xào",
-    "image": "/images/xao/cai-toi.jpg",
+    "image": "/images/dishes/caihongkongxaotoi.webp",
     "id": 30
   },
   {
@@ -52,7 +52,7 @@
     "price": 79000,
     "description": "Bok Choy with Shiitake Sauce",
     "category": "Xào",
-    "image": "/images/xao/cai-dong-co.jpg",
+    "image": "/images/dishes/caithiasotnamdongco.webp",
     "id": 32
   },
   {
@@ -60,7 +60,7 @@
     "price": 69000,
     "description": "Stir-fried Beans with XO Sauce",
     "category": "Xào",
-    "image": "/images/xao/dau-que.jpg",
+    "image": "/images/dishes/dauquexaoxo.webp",
     "id": 33
   },
   {
@@ -68,7 +68,7 @@
     "price": 75000,
     "description": "Fried Rice with Shrimp and Abalone Sauce",
     "category": "Xào",
-    "image": "/images/xao/com-tom-bao-ngu.jpg",
+    "image": "/images/dishes/comchientomsotbaongu.webp",
     "id": 34
   },
   {
@@ -76,7 +76,7 @@
     "price": 75000,
     "description": "Salted Fish & Duck Fried Rice",
     "category": "Xào",
-    "image": "/images/xao/com-vit.jpg",
+    "image": "/images/dishes/comchienvitsotcaman.webp",
     "id": 35
   },
   {
@@ -84,7 +84,7 @@
     "price": 75000,
     "description": "Macau Style Fried Rice",
     "category": "Xào",
-    "image": "/images/xao/com-macau.jpg",
+    "image": "/images/dishes/comchienmacau.webp",
     "id": 36
   },
   {
@@ -92,7 +92,7 @@
     "price": 75000,
     "description": "Mapo Tofu",
     "category": "Xào",
-    "image": "/images/xao/dau-hu.jpg",
+    "image": "/images/dishes/dauhutuxuyen.webp",
     "id": 37
   },
   {
@@ -100,7 +100,7 @@
     "price": 25000,
     "description": "Cantonese Pickled Radish",
     "category": "Xào",
-    "image": "/images/xao/cu-cai.jpg",
+    "image": "/images/dishes/cucaimuoiquangdong.webp",
     "id": 38
   },
   {
