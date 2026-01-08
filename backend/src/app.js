@@ -62,6 +62,11 @@ app.get('/api/health', (req, res) => {
     res.send('Backend OK');
 });
 
+// Root Test Route
+app.get('/', (req, res) => {
+    res.json({ message: "Backend is running successfully!" });
+});
+
 // 404 Handler
 app.use((req, res) => {
     res.status(404).json({ message: 'Route not found' });
