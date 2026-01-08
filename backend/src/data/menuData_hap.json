@@ -4,7 +4,7 @@
     "price": 55000,
     "description": "Shrimp Dumplings",
     "category": "Hấp",
-    "image": "/images/hap/ha-cao-tom.jpg",
+    "image": "/images/dishes/hacaotom.webp",
     "id": 11
   },
   {
@@ -12,7 +12,7 @@
     "price": 55000,
     "description": "Phoenix Eye Dumplings",
     "category": "Hấp",
-    "image": "/images/hap/cao-phuong-nhan.jpg",
+    "image": "/images/dishes/caophuongnhan.webp",
     "id": 12
   },
   {
@@ -20,7 +20,7 @@
     "price": 59000,
     "description": "Premium Scallop Dumplings",
     "category": "Hấp",
-    "image": "/images/hap/cao-diep.jpg",
+    "image": "/images/dishes/caosodiepthuonghang.webp",
     "id": 13
   },
   {
@@ -28,7 +28,7 @@
     "price": 55000,
     "description": "Scallop Dumpling",
     "category": "Hấp",
-    "image": "/images/hap/xiu-mai-tom-thit.jpg",
+    "image": "/images/dishes/xiumaitomthit.webp",
     "id": 14
   },
   {
@@ -36,7 +36,7 @@
     "price": 49000,
     "description": "Jade Dumplings",
     "category": "Hấp",
-    "image": "/images/hap/cao-ngoc-bich.jpg",
+    "image": "/images/dishes/caongocbich.webp",
     "id": 15
   },
   {
@@ -44,7 +44,7 @@
     "price": 55000,
     "description": "Butterfly Pea Golden Dumplings",
     "category": "Hấp",
-    "image": "/images/hap/cao-kim-tien.jpg",
+    "image": "/images/dishes/caokimtienhoadaubiec.webp",
     "id": 16
   },
   {
@@ -52,7 +52,7 @@
     "price": 55000,
     "description": "Golden Dumplings",
     "category": "Hấp",
-    "image": "/images/hap/cao-hoang-kim.jpg",
+    "image": "/images/dishes/caohoangkim.webp",
     "id": 17
   },
   {
@@ -60,7 +60,7 @@
     "price": 59000,
     "description": "Seaweed Crab Stick Roll",
     "category": "Hấp",
-    "image": "/images/hap/rong-bien-cua.jpg",
+    "image": "/images/dishes/rongbienthanhcua.webp",
     "id": 18
   },
   {
@@ -68,7 +68,7 @@
     "price": 55000,
     "description": "Steamed Matcha Bun",
     "category": "Hấp",
-    "image": "/images/hap/tra-xanh.jpg",
+    "image": "/images/dishes/banhbaotraxanh.webp",
     "id": 19
   },
   {
@@ -76,7 +76,7 @@
     "price": 55000,
     "description": "Char Siu Buns",
     "category": "Hấp",
-    "image": "/images/hap/xa-xiu.jpg",
+    "image": "/images/dishes/banhbaoxaxiu.webp",
     "id": 20
   },
   {
@@ -84,7 +84,7 @@
     "price": 59000,
     "description": "Golden Lava Buns",
     "category": "Hấp",
-    "image": "/images/hap/kim-sa.jpg",
+    "image": "/images/dishes/banhbaokimsa.webp",
     "id": 21
   },
   {
@@ -92,7 +92,7 @@
     "price": 55000,
     "description": "Shanghai Soup Dumplings",
     "category": "Hấp",
-    "image": "/images/hap/thuong-hai.jpg",
+    "image": "/images/dishes/banhbaothuonghai.webp",
     "id": 22
   },
   {
@@ -100,7 +100,7 @@
     "price": 69000,
     "description": "Fresh Shrimp Rice Rolls",
     "category": "Hấp",
-    "image": "/images/hap/banh-cuon.jpg",
+    "image": "/images/dishes/banhcuontom.webp",
     "id": 23
   },
   {
@@ -108,7 +108,7 @@
     "price": 59000,
     "description": "Braised Chicken Feet with Black Bean",
     "category": "Hấp",
-    "image": "/images/hap/chan-ga.jpg",
+    "image": "/images/dishes/changatauxi.webp",
     "id": 24
   },
   {
@@ -116,7 +116,7 @@
     "price": 59000,
     "description": "Steamed Pork Ribs with Black Bean",
     "category": "Hấp",
-    "image": "/images/hap/suon-non.jpg",
+    "image": "/images/dishes/xuonnontauxi.webp",
     "id": 25
   }
 ]
