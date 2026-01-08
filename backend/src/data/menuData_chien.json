@@ -4,7 +4,7 @@
     "price": 59000,
     "description": "Sichuan Spicy Wontons",
     "category": "Chiên",
-    "image": "/images/chien/hoanh-thanh-tu-xuyen.jpg",
+    "image": "/images/dishes/hoanhthanhtuxuyen.webp",
     "id": 1
   },
   {
@@ -12,7 +12,7 @@
     "price": 69000,
     "description": "Hong Kong Crispy Shrimp Roll",
     "category": "Chiên",
-    "image": "/images/chien/cuon-tom-da-gion.jpg",
+    "image": "/images/dishes/cuontomdagionhongkong.webp",
     "id": 2
   },
   {
@@ -20,7 +20,7 @@
     "price": 89000,
     "description": "Seafood Spring Rolls",
     "category": "Chiên",
-    "image": "/images/chien/nem-hai-san.jpg",
+    "image": "/images/dishes/nemchienhaisan.webp",
     "id": 3
   },
   {
@@ -28,7 +28,7 @@
     "price": 59000,
     "description": "Lychee-style Fried Shrimp Balls",
     "category": "Chiên",
-    "image": "/images/chien/tom-vien-le-chi.jpg",
+    "image": "/images/dishes/tomvienchienlechi.webp",
     "id": 4
   },
   {
@@ -36,7 +36,7 @@
     "price": 59000,
     "description": "Crispy Shrimp Wontons",
     "category": "Chiên",
-    "image": "/images/chien/hoanh-thanh-tom.jpg",
+    "image": "/images/dishes/hoanhthanhtomchien.webp",
     "id": 5
   },
   {
@@ -44,7 +44,7 @@
     "price": 69000,
     "description": "Crispy Bean Curd Shrimp Roll",
     "category": "Chiên",
-    "image": "/images/chien/tau-hu-ky.jpg",
+    "image": "/images/dishes/tauhukytomchien.webp",
     "id": 6
   },
   {
@@ -60,7 +60,7 @@
     "price": 135000,
     "description": "Golden Salted Egg Yolk Fried Shrimp",
     "category": "Chiên",
-    "image": "/images/chien/tom-sot-hoang-kim.jpg",
+    "image": "/images/dishes/tomhoangkim.webp",
     "id": 8
   },
   {
@@ -68,7 +68,7 @@
     "price": 55000,
     "description": "Pan-fried Pork Buns",
     "category": "Chiên",
-    "image": "/images/chien/banh-bao-thit.jpg",
+    "image": "/images/dishes/banhbaothitchien.webp",
     "id": 9
   },
   {
@@ -76,7 +76,7 @@
     "price": 95000,
     "description": "Char Siu Pork",
     "category": "Chiên",
-    "image": "/images/chien/xa-xiu.jpg",
+    "image": "/images/dishes/thitxaxiu.webp",
     "id": 10
   }
 ]
