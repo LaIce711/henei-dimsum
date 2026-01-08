@@ -22,32 +22,13 @@ const app = express();
 app.use(express.json());
 
 // CORS Configuration
-const allowedOrigins = [
-    'http://localhost:3000',
-    process.env.FRONTEND_URL // Will be 'https://henei-dimsum.vercel.app' set in Render Env Vars
-];
-
-app.use(cors({
-    origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps or curl requests)
-        if (!origin) return callback(null, true);
-
-        // Check if origin is allowed
-        // We normalize to handle potential trailing slashes if needed, but array check is usually strict
-        // Let's use flexible check
-        const isAllowed = allowedOrigins.some(allowed =>
-            origin === allowed || origin === allowed + '/'
-        );
-
-        if (isAllowed) {
-            callback(null, true);
-        } else {
-            console.log('Blocked by CORS:', origin);
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true
-}));
+// CORS Configuration
+// Allow all origins for easier deployment debugging
+app.use(cors());
+// app.use(cors({
+//     origin: process.env.FRONTEND_URL || '*',
+//     credentials: true
+// }));
 
 // Routes
 app.use("/api/dishes", dishRoutes);
