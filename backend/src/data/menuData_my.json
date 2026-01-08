@@ -12,7 +12,7 @@
     "price": 119000,
     "description": "Wok-fried Efu Noodles with Barbecued Pork",
     "category": "Mỳ",
-    "image": "/images/my/efu-xa-xiu.jpg",
+    "image": "/images/dishes/myefuxaoxaxiu.webp",
     "id": 41
   },
   {
@@ -44,7 +44,7 @@
     "price": 129000,
     "description": "Wok-fried Seafood Noodle",
     "category": "Mỳ",
-    "image": "/images/my/hu-tieu-hai-san.jpg",
+    "image": "/images/dishes/hutiuxaohaisan.webp",
     "id": 45
   },
   {
@@ -52,7 +52,7 @@
     "price": 89000,
     "description": "Wok-fried Flat Noodles with Beef",
     "category": "Mỳ",
-    "image": "/images/my/hu-tieu-bo.jpg",
+    "image": "/images/dishes/hutiuxaobo.webp",
     "id": 46
   },
   {
@@ -68,7 +68,7 @@
     "price": 89000,
     "description": "Wok-fried Flat Rice Noodles with Duck",
     "category": "Mỳ",
-    "image": "/images/my/hu-tieu-vit.jpg",
+    "image": "/images/dishes/hutiuxaovit.webp",
     "id": 48
   }
 ]
