@@ -1,0 +1,360 @@
+/* Basic Setup */
+.reservation-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+/* Header */
+.reservation-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.reservation-header h1 {
+  color: #B71C1C;
+  /* Premium Dark Red */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reservation-header p {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Form Card */
+.reservation-form {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* Section Styling */
+.form-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 2rem;
+}
+
+.form-section h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-section h3::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 24px;
+  background: #B71C1C;
+  border-radius: 4px;
+}
+
+/* Form Layout */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.form-group .required {
+  color: #d32f2f;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.85rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #B71C1C;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(183, 28, 28, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Availability Alert */
+.availability-alert {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.availability-alert.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.availability-alert.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+/* Pre-order Section Toggle */
+.section-header-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: 2px solid #B71C1C;
+  color: #B71C1C;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.toggle-btn:hover,
+.toggle-btn.active {
+  background: #B71C1C;
+  color: white;
+}
+
+/* Menu Grid */
+.reservation-menu {
+  background: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.mini-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Scrollbar for menu */
+.mini-menu-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mini-menu-grid::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.mini-dish-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.mini-dish-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mini-dish-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.mini-dish-card>div {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dish-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  margin-top: 0;
+  color: #333;
+}
+
+.dish-price {
+  color: #B71C1C;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.mini-dish-card button {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.4rem;
+  background: #212121;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.mini-dish-card button:hover {
+  background: #424242;
+}
+
+/* Mini Cart Summary */
+.mini-cart-summary {
+  background: #fff8e1;
+  /* Light yellow/gold tint */
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ffe0b2;
+}
+
+.mini-cart-summary h4 {
+  margin-top: 0;
+  color: #f57f17;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ffe0b2;
+  padding-bottom: 0.5rem;
+}
+
+.mini-cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #ffe0b2;
+  font-size: 0.95rem;
+}
+
+.mini-cart-item:last-child {
+  border-bottom: none;
+}
+
+.mini-cart-item button {
+  background: none;
+  border: none;
+  color: #d32f2f;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
+.mini-total {
+  margin-top: 1rem;
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #B71C1C;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 1.1rem;
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(183, 28, 28, 0.3);
+  transition: all 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(183, 28, 28, 0.4);
+}
+
+.submit-button:disabled {
+  background: #cfd8dc;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reservation-container {
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+
+  .reservation-form {
+    padding: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .section-header-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .mini-menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+}
